@@ -2,8 +2,8 @@
 ## ==========设置各参数（不需要的可以删掉或者前面加# ）==================
 
 # 设置ARGO参数 (如果设置，注意把前面的# 去掉，如果不设置，默认启用临时隧道)
-export TOK=''
-export ARGO_DOMAIN=''
+export TOK='eyJhIjoiZjcyYWVkZTBiY2E1ZDdlNWQ2ZTE2MTNiNjVjNDc5ZjEiLCJ0IjoiMzY1MzhhNzItZjQ3Zi00NWVlLTk4YWMtMzMwZWFkYjZiZjEyIiwicyI6IlltVTJaV1V5WlRrdFpqQXlOQzAwT0RBNUxXSTVOVEV0Tm1Vd05UQXdNelExWm1SaSJ9'
+export ARGO_DOMAIN='zeaburus.xingfriedrich.tk'
 
 #设置哪吒参数(NEZHA_TLS='1'开启tls,设置其他关闭tls)
 # export NEZHA_SERVER='xxxx'
