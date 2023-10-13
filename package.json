@@ -1,12 +1,17 @@
 {
-  "name": "my-project",
-  "version": "1.0.0",
-  "description": "M",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "child_process": "^1.0.2"
+    "name": "good",
+    "version": "9.9.9",
+    "main": "index.js",
+    "repository": "",
+    "author": "",
+    "license": "Apache-2.0",
+    "private": true,
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {  
+    },
+    "engines": {
+      "node": ">=14"
+    }
   }
-}

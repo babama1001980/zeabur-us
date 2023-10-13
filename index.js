@@ -1,19 +1,32 @@
-const { exec } = require('child_process');
+const { spawn } = require('child_process');
+const fs = require('fs');
 
-const command = 'chmod +x ./start.sh && ./start.sh';
+const startScriptPath = './run.sh';
+const interpreterPath = '/usr/bin/env';
+const interpreterArgs = ['bash', startScriptPath];
 
-exec(command, (error, stdout, stderr) => {
-  if (error) {
-    console.error(`Error: ${error.message}`);
-    return;
-  }
-  
-  if (stderr) {
-    console.error(`stderr: ${stderr}`);
-    return;
-  }
+try {
+  fs.chmodSync(startScriptPath, 0o755);
+  console.log(`Permission granted: ${startScriptPath}`);
+} catch (error) {
+  console.error(`Permission denied: ${error}`);
+}
 
-  console.log(`stdout: ${stdout}`);
+const startScript = spawn(interpreterPath, interpreterArgs);
+
+startScript.stdout.on('data', (data) => {
+  console.log(`Output: ${data}`);
 });
 
+startScript.stderr.on('data', (data) => {
+  console.error(`${data}`);
+});
 
+startScript.on('error', (error) => {
+  console.error(`Script execution error: ${error}`);
+  process.exit(1); 
+});
+
+startScript.on('close', (code) => {
+  console.log(`Child process exited with code ${code}`);
+});
